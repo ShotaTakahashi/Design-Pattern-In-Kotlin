@@ -1,25 +1,26 @@
 package iterator
 
-class BookShelf :Aggregate {
-    private val books: Array<Book?>
-    private var last: Int
+import java.util.ArrayList
+
+class BookShelf: Aggregate {
+
+    private var books: ArrayList<Book>
 
     constructor(initialize: Int) {
-        this.books = arrayOfNulls(initialize)
-        this.last = 0
+        this.books = ArrayList(initialize)
     }
 
-    fun getBookAt(index: Int): Book? {
+
+    fun getBookAt(index: Int): Book {
         return books[index]
     }
 
     fun appendBook(book: Book) {
-        this.books[last] = book
-        last++
+        books.add(book)
     }
 
     fun getLength(): Int {
-        return last
+        return books.size
     }
 
     override fun iterator(): Iterator {

@@ -7,10 +7,10 @@ fun main(args: Array<String>) {
     bookShelf.appendBook(Book("Bible"))
     bookShelf.appendBook(Book("Cinderella"))
     bookShelf.appendBook(Book("Daddy-Long-Legs"))
-   /* bookShelf.appendBook(Book("East of Eden"))
+    bookShelf.appendBook(Book("East of Eden"))
     bookShelf.appendBook(Book("Frankenstein"))
     bookShelf.appendBook(Book("Gulliver's Travels"))
-    bookShelf.appendBook(Book("Hamlet"))*/
+    bookShelf.appendBook(Book("Hamlet"))
     val it: Iterator = bookShelf.iterator()
     while (it.hasNext()) {
         run {
