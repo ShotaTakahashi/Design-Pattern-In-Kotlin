@@ -14,7 +14,7 @@ class BookShelfIterator: Iterator {
     }
 
     override fun next(): Any {
-        val book: Book = bookShelf.getBookAt(index)
+        val book: Book = bookShelf.getBookAt(index)!!
         index++
         return book
     }

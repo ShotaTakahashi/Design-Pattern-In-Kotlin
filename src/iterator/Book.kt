@@ -1,4 +1,9 @@
 package iterator
 
-class Book(private val name: String) {
+class Book {
+    val name: String
+
+    constructor(name: String) {
+        this.name = name
+    }
 }

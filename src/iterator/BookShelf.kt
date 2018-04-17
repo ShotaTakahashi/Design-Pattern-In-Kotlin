@@ -1,19 +1,19 @@
 package iterator
 
-abstract class BookShelf :Aggregate {
-    private val books: Array<Book>
+class BookShelf :Aggregate {
+    private val books: Array<Book?>
     private var last: Int
 
-    constructor(books: Array<Book>) {
-        this.books = books
+    constructor(initialize: Int) {
+        this.books = arrayOfNulls(initialize)
         this.last = 0
     }
 
-    fun getBookAt(index: Int): Book {
+    fun getBookAt(index: Int): Book? {
         return books[index]
     }
 
-    fun appendBook(book: Book): Unit {
+    fun appendBook(book: Book) {
         this.books[last] = book
         last++
     }
