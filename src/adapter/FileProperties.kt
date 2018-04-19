@@ -1,23 +1,23 @@
 package adapter
 
-import java.io.FileInputStream
+import java.io.*
 import java.util.*
 
-class FileProperties: FileIO, Properties() {
+class FileProperties: Properties(), FileIO {
     override fun readFromFile(filename: String) {
-        load(FileInputStream(filename))
+        this.load(FileInputStream(filename))
     }
 
     override fun writeToFile(filename: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.store(FileOutputStream(filename), "written by FileProperties")
     }
 
     override fun setValue(key: String, value: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.setProperty(key, value)
     }
 
     override fun getValue(key: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.getProperty(key, "")
     }
 
 }
