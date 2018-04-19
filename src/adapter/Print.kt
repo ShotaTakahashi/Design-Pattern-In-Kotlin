@@ -1,6 +1,6 @@
 package adapter
 
 interface Print {
-    abstract fun printWeak()
-    abstract fun printStrong()
+    fun printWeak()
+    fun printStrong()
 }
