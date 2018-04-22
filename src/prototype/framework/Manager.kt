@@ -6,11 +6,7 @@ class Manager {
         showcase.put(name, proto)
     }
     fun create(protoname: String): Product {
-        try {
-            if (showcase.get(protoname) is Product) {
-                val p: Product = showcase.get(protoname)!!
-                return p.createClone()
-            }
-        }
+        val p: Product = showcase.get(protoname) as Product
+        return p.createClone()
     }
 }
