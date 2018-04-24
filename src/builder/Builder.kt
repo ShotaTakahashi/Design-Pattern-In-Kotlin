@@ -4,14 +4,14 @@ import java.io.FileWriter
 import java.io.IOException
 import java.io.PrintWriter
 
-abstract class Builder {
-    abstract fun makeTitle(title: String)
-    abstract fun makeString(str: String)
-    abstract fun makeItems(items: List<String>)
-    abstract fun close()
+interface Builder {
+    fun makeTitle(title: String)
+    fun makeString(str: String)
+    fun makeItems(items: List<String>)
+    fun close()
 }
 
-class TextBuilder: Builder() {
+class TextBuilder: Builder {
     private val buffer: StringBuffer = StringBuffer()
     override fun makeTitle(title: String) {
         buffer.append("==============================\n")
@@ -40,7 +40,7 @@ class TextBuilder: Builder() {
     }
 }
 
-class HTMLBuilder: Builder() {
+class HTMLBuilder: Builder {
     private lateinit var filename: String
     private lateinit var writer: PrintWriter
 
