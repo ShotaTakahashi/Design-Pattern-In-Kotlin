@@ -2,4 +2,5 @@
 *.iml
 *.txt
 *.html
+*.DS_Store
 out
